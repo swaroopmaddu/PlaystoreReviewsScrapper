@@ -6,13 +6,11 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 
-
-# app_id = input("Application id : ")
 app_id = input("Enter application ID: ")
 url = "https://play.google.com/store/apps/details?id=" + app_id + "&showAllReviews=true"
 
+browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 browser.get(url)
 # U26fgb O0WRkf oG5Srb C0oVfc n9lfJ M9Bg4d
 time.sleep(1)
@@ -45,7 +43,7 @@ while no_of_pagedowns:
             except:
                 pass
     no_of_pagedowns -= 1
-    print(430 - no_of_pagedowns)
+    print(400 - no_of_pagedowns)
 
 
 # Now that the page is fully scrolled, grab the source code.
@@ -78,8 +76,9 @@ for div in reviews:
     review = div.find("span", {"jsname": "fbQN7e"})
     review = review.text.encode('unicode-escape').decode('utf-8')
     if(review == ""):
-        print("Short Review")
         review = div.find("span", {"jsname": "bN97Pc"})
         review = review.text
     content = {'Sno': r, 'User': user, "Rating": rating, "Review": review}
     extracter.writecsv(app_id, content)
+
+browser.close()
