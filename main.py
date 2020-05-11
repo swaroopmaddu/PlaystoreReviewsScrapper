@@ -10,7 +10,7 @@ browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
 
 
 # app_id = input("Application id : ")
-app_id = "com.android.chrome"
+app_id = input("Enter application ID: ")
 url = "https://play.google.com/store/apps/details?id=" + app_id + "&showAllReviews=true"
 
 browser.get(url)
@@ -70,13 +70,13 @@ for div in reviews:
     r = r + 1
     print(r)
     user = div.find("span", {"class": "X43Kjb"})
-    user = user.text
+    user = user.text.encode('unicode-escape').decode('utf-8')
     rating = div.find("div", {"class", "pf5lIe"})
     rating = rating.find("div", {"aria-label": re.compile('Rated')})
     rating = str(rating.get('aria-label'))
     rating = rating[6]
     review = div.find("span", {"jsname": "fbQN7e"})
-    review = review.text
+    review = review.text.encode('unicode-escape').decode('utf-8')
     if(review == ""):
         print("Short Review")
         review = div.find("span", {"jsname": "bN97Pc"})
