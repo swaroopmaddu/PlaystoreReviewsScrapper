@@ -2,6 +2,10 @@
 
 Automated Playstore Reviews Scrapper using python3 and Selenium. And saves the revies to a csv file for further Data Exploration!
 
+You can play with **no_of_pagedowns** in main.py for more reviews but don't use very high number it will cause memory error i tried alot and choosen 400 pagedowns you can choose with your own.
+  
+  > It is like no_of_pagedowns = 400
+
 <p align="center">
   <img src="screenshot.png" height="400" width="712" />
 </p>
