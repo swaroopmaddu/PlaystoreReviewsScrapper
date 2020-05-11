@@ -17,7 +17,7 @@ Automated Playstore Reviews Scrapper using python3 and Selenium. And saves the r
 # Usage
 
     ```
-    * git clone https://gitlab.com/datalabai/reviewscrapper.git pyscrapper
+    * git clone https://github.com/swaroopmaddu/PlaystoreReviewsScrapper.git pyscrapper
 
     * virtualenv -p python3 pyscrapper/
 
