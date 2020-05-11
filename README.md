@@ -33,5 +33,4 @@ Automated Playstore Reviews Scrapper using python3 and Selenium. And saves the r
    
 
 # Note
-  Don't close selenium browser manually it fails to work if you close it.
   Let me know if anything fails.
